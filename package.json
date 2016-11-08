@@ -1,18 +1,18 @@
 {
   "name": "keybase-login",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a sample Keybase login system",
   "main": "lib/main.js",
   "scripts": {
     "test": "npm test",
-    "make" : "./node_modules/.bin/iced3 --compile --output lib/ src/*.iced"
+    "make": "./node_modules/.bin/iced3 --compile --output lib/ src/*.iced"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keybase/node-login.git"
   },
-  "bin" : {
-    "keybase-login" : "./bin/main.js"
+  "bin": {
+    "keybase-login": "./bin/main.js"
   },
   "keywords": [
     "Keybase",
