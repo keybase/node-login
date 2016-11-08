@@ -1,10 +1,8 @@
-
 kbpgp = require 'kbpgp'
 triplesec = require 'triplesec'
 request = require 'request'
 {make_esc} = require 'iced-error'
 {Auth} = require 'keybase-proofs'
-read = require 'read'
 
 json_endpoint = (w) -> "https://keybase.io/_/api/1.0/#{w}.json"
 
@@ -82,23 +80,3 @@ exports.login = login = ({username, email, passphrase}, cb) ->
   await post_login { username, email, pdpka4, pdpka5 }, esc defer res
   cb null, res
 
-parse_email_or_username = (email_or_username) ->
-  if email_or_username.indexOf('@') > 0 then { email : email_or_username }
-  else { username : email_or_username }
-
-main = (cb) ->
-  esc = make_esc cb, "main"
-  await read { prompt : "email or username> " }, esc defer email_or_username
-  {username, email} = parse_email_or_username email_or_username
-  await read { prompt : "passphrase> ", silent : true }, esc defer passphrase
-  await login { username, email, passphrase }, defer err, res
-  cb err, res
-
-await main defer err, res
-rc = 0
-if err?
-  console.error err
-  rc = 2
-else
-  console.log res
-process.exit rc

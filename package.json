@@ -1,0 +1,37 @@
+{
+  "name": "keybase-login",
+  "version": "1.0.0",
+  "description": "a sample Keybase login system",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "npm test",
+    "make" : "./node_modules/.bin/iced3 --compile --output lib/ src/*.iced"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keybase/node-login.git"
+  },
+  "bin" : {
+    "keybase-login" : "./bin/main.js"
+  },
+  "keywords": [
+    "Keybase",
+    "login"
+  ],
+  "author": "Maxwell Krohn",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/keybase/node-login/issues"
+  },
+  "homepage": "https://github.com/keybase/node-login#readme",
+  "dependencies": {
+    "iced-coffee-script-3": "^110.0.0",
+    "iced-error": "0.0.9",
+    "iced-runtime-3": "^3.0.4",
+    "kbpgp": "^2.0.58",
+    "keybase-proofs": "^2.0.58",
+    "read": "^1.0.7",
+    "request": "^2.78.0",
+    "triplesec": "^3.0.25"
+  }
+}
