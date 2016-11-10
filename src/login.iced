@@ -69,6 +69,7 @@ post_login = ({username, email, pdpka4, pdpka5}, cb) ->
     session : body.session
     csrf_token : body.csrf_token
     cookies : response.headers["set-cookie"]
+    me : body.me
   cb null, res
 
 exports.login = login = ({username, email, passphrase}, cb) ->
@@ -79,4 +80,3 @@ exports.login = login = ({username, email, passphrase}, cb) ->
   await make_sig { key : key5, email, username, session }, esc defer pdpka5
   await post_login { username, email, pdpka4, pdpka5 }, esc defer res
   cb null, res
-
