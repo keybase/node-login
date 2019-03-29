@@ -35,8 +35,8 @@ get_salt = ({username, email}, cb) ->
 strech_passphrase = ({salt, passphrase}, cb) ->
   esc = make_esc cb, "make_keys"
   encryptor = new triplesec.Encryptor {key : (new Buffer passphrase, "utf8") }
-  await encryptor.resalt { salt, extra_keymaterial : 64 }, esc defer {extra}
-  cb null, { key4 : extra[0...32], key5 : extra[32...64] }
+  await encryptor.resalt { salt, extra_keymaterial : 96 }, esc defer {extra}
+  cb null, { key4 : extra[32...64], key5 : extra[64...96] }
 
 make_sig = ({key, email, username, session}, cb) ->
   esc = make_esc cb, "make_sig"

@@ -32,6 +32,6 @@
     "keybase-proofs": "^2.0.58",
     "read": "^1.0.7",
     "request": "^2.78.0",
-    "triplesec": "^3.0.25"
+    "triplesec": "^4.0.3"
   }
 }
